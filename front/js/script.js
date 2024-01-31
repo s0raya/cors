@@ -12,7 +12,6 @@ function getCharacter() {
             return response.json()
         })
         .then(data => {
-            console.log(data);
             const {name, status, species, gender, origin: {name: originName}, image} = data;
             characterInfo.innerHTML = `
             <h2>${name}</h2>
