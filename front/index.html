@@ -7,11 +7,19 @@
     <title>Rick and Morty</title>
 </head>
 <body>
-    <h1>Rick and Morty</h1>
-    <label for="characterName">Buscar personaje:</label>
-    <input type="text" id="characterName" placeholder="Rick" />
-    <button onclick="getCharacter()">Buscar</button>
-    <button onclick="getCharacters()">Borrar</button>
+    <header class="header-top">
+        <div id="pagination" class="pagination">
+            <button id="prev-page" class="boton">Previous Page</button>
+            <img src="./assets/img/randm.png" alt="logo"/>
+            <button id="next-page" class="boton">Next Page</button>
+        </div>
+    </header>
+    <section class="searcher">
+        <label for="characterName">Buscar personaje:</label>
+        <input type="text" id="characterName" placeholder="Rick" />
+        <button onclick="getCharacter()">Buscar</button>
+        <button onclick="getCharacters()">Borrar</button>
+    </section>
     <div id="characterInfo" class="characterInfo"></div>
     <script src="./js/script.js"></script>
 </body>

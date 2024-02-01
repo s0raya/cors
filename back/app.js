@@ -11,11 +11,10 @@ app.get('/', (req,res) => {
 
 app.get('/characters', async (req,res) => {
     const url = 'https://rickandmortyapi.com/api/character'
-
     try {
         const response = await axios.get(url);
-        const characters = response.data.results;
-        res.json({characters})
+        const characters = response.data;
+        res.json(characters)
     } catch(error) {
         res.status(404).json({err: 'No se pudieron obtener los datos'})
     }
@@ -27,7 +26,7 @@ app.get('/characters/:name', async (req,res) => {
     try {
         const response = await axios.get(url);
         const {name, status, species, gender, origin: {name: originName}, image} = response.data.results[0];
-        res.json({name, status, species, gender, origin: {name: originName}, image})
+        res.json({name, status, species, gender, originName, image})
     } catch (error) {
         res.status(404).json({err: 'No se pudo obtener el personaje'})
     }
